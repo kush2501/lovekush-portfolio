@@ -1,0 +1,65 @@
+.skills{
+    min-height:100vh;
+    padding:80px 8%;
+    color:var(--text-color);
+}
+
+.skills h2{
+    font-size:45px;
+    margin-bottom:50px;
+}
+
+.skill{
+    margin-bottom:30px;
+}
+
+.skill-header{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:10px;
+    font-size:18px;
+    color:var(--text-color);
+}
+
+.progress{
+    height:12px;
+    background:#1E293B;
+    border-radius:20px;
+    overflow:hidden;
+}
+
+.progress-bar{
+    height:100%;
+    background:var(--secondary-color);
+    border-radius:20px;
+}
+
+/* ===========================
+   Mobile Responsive
+=========================== */
+
+@media (max-width:768px){
+
+    .skills{
+        padding:60px 8%;
+        text-align:center;
+    }
+
+    .skills h2{
+        font-size:34px;
+        margin-bottom:35px;
+    }
+
+    .skill{
+        margin-bottom:25px;
+    }
+
+    .skill-header{
+        font-size:16px;
+    }
+
+    .progress{
+        height:10px;
+    }
+
+}

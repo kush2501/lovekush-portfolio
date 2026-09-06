@@ -1,0 +1,277 @@
+.project-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+    margin-top: 30px;
+}
+
+.gallery-item {
+    height: 220px;
+    position: relative; 
+    border-radius: 12px;
+    overflow: hidden;
+    background: #ffffff;
+    border: 1px solid rgba(148, 163, 184, 0.2);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-overlay {
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(0, 0, 0, 0.55);
+
+    opacity: 0;
+
+    transition: opacity 0.3s ease;
+
+    pointer-events: none;
+}
+
+.gallery-overlay span {
+    padding: 10px 16px;
+
+    border-radius: 8px;
+
+    background: rgba(37, 99, 235, 0.95);
+
+    color: #ffffff;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.gallery-item:hover .gallery-overlay {
+    opacity: 1;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+
+    transition: transform 0.35s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.04);
+}
+
+.gallery-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+/* ===========================
+   Mobile Responsive
+=========================== */
+
+@media (max-width: 768px) {
+
+    .project-gallery {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .gallery-item {
+        height: 220px;
+    }
+
+}   
+
+/* ===========================
+   Lightbox
+=========================== */
+
+.lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px;
+
+    background: rgba(0, 0, 0, 0.85);
+}
+
+.lightbox-content {
+    position: relative;
+
+    width: min(1100px, 95vw);
+    max-height: 90vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox-content img {
+    max-width: 100%;
+    max-height: 85vh;
+
+    object-fit: contain;
+
+    border-radius: 10px;
+    background: #ffffff;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+
+    width: 40px;
+    height: 40px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: #2563eb;
+    color: #ffffff;
+
+    font-size: 28px;
+    line-height: 1;
+
+    cursor: pointer;
+
+    z-index: 2;
+
+    transition: transform 0.2s ease,
+                background 0.2s ease;
+}
+
+.lightbox-close:hover {
+    transform: scale(1.08);
+    background: #1d4ed8;
+}
+
+/*===========================
+   Mobile
+=========================== */
+
+@media (max-width: 768px) {
+
+    .lightbox {
+        padding: 15px;
+    }
+
+    .lightbox-content {
+        width: 95vw;
+    }
+
+    .lightbox-content img {
+        max-height: 80vh;
+    }
+
+    .lightbox-close {
+        top: -10px;
+        right: -5px;
+    }
+
+}
+
+/* ===========================
+   Lightbox Navigation
+=========================== */
+
+.lightbox-prev,
+.lightbox-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 48px;
+    height: 48px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: rgba(37, 99, 235, 0.9);
+    color: #ffffff;
+
+    font-size: 32px;
+    line-height: 1;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: all 0.25s ease;
+
+    z-index: 3;
+}
+
+.lightbox-prev {
+    left: -65px;
+}
+
+.lightbox-next {
+    right: -65px;
+}
+
+.lightbox-prev:hover,
+.lightbox-next:hover {
+    background: #2563eb;
+    transform: translateY(-50%) scale(1.08);
+}
+
+.lightbox-counter {
+    position: absolute;
+
+    bottom: -35px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: 15px;
+    font-weight: 600;
+}
+
+/* ===========================
+   Mobile Navigation
+=========================== */
+
+@media (max-width: 768px) {
+
+    .lightbox-prev {
+        left: 5px;
+    }
+
+    .lightbox-next {
+        right: 5px;
+    }
+
+    .lightbox-prev,
+    .lightbox-next {
+        width: 40px;
+        height: 40px;
+
+        font-size: 26px;
+    }
+
+    .lightbox-counter {
+        bottom: -30px;
+        font-size: 14px;
+    }
+
+}
+
+.gallery-item:focus-visible {
+    outline: 3px solid #60a5fa;
+    outline-offset: 4px;
+}
