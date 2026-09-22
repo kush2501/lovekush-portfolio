@@ -135,6 +135,7 @@
   color: var(--secondary-color);
 }
 
+
 /* ===========================
    Tablet Responsive
 =========================== */
@@ -206,6 +207,10 @@
   .circle {
     width: 140px;
     height: 140px;
+  }
+
+  .circle img {
+    transform: scale(1.12);
   }
 }
 
