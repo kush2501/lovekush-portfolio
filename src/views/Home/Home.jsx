@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+
 import {
   container,
   fadeUp,
@@ -7,7 +8,11 @@ import {
 
 import personal from "../../data/personal";
 import Button from "../../components/Button/Button";
+
 import "./Home.css";
+
+import profilePhoto from "../../assets/images/profile/profile-photo.png";
+
 import { Typewriter } from "react-simple-typewriter";
 
 function Home() {
@@ -91,15 +96,24 @@ function Home() {
         initial="hidden"
         animate="visible"
       >
+
         <div className="profile-card">
 
-          <div className="circle"></div>
+          <div className="circle">
+            <img
+              src={profilePhoto}
+              alt={`${personal.name} profile`}
+            />
+          </div>
 
           <h3>Open to Work</h3>
 
-          <p>Data Science | ML | AI</p>
+          <p>
+            Data Science | ML | AI
+          </p>
 
         </div>
+
       </motion.div>
 
     </section>
